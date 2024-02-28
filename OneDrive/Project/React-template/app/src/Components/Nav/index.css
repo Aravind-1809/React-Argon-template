@@ -1,0 +1,106 @@
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.first-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.default-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.span-light {
+    color:#ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.line:hover {
+    text-decoration: underline;
+    border-color: #ffffff;
+}
+
+.span-bold {
+    color:#ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.menu {
+    font-size:20px;
+    color:#e2e8f0;
+    cursor: pointer;
+}
+
+.second-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 35%;
+}
+
+
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border: 0px solid;
+    border-radius: 8px;
+    width:200px;
+    height:40px;
+    margin-right: 10px;
+}
+
+.input {
+    outline: none;
+    border: none;
+    width:75%;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.input::placeholder {
+    color:#e2e8f0;
+}
+
+.search {
+    font-size: 22px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 17px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.bell {
+    font-size: 13px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.up {
+    margin-bottom: 2px;
+}

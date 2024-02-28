@@ -1,0 +1,47 @@
+.bg-container {
+    background-image: url("https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/hand-background.6b46ef98.png");
+    background-size: cover;
+    border-radius: 20px;
+    height:500px;
+    width:31%;
+    display: flex;
+    padding: 40px;
+    margin-left: 20px;
+    margin-top: -20px;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.bulb-container {
+    background-color: #ffffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bulb {
+    color:#3182ce;
+    font-size:18px;
+}
+
+.head {
+    color:#ffffff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.paragraph {
+    color:#ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}

@@ -1,0 +1,28 @@
+.similar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 31%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.team-head {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+.model-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+

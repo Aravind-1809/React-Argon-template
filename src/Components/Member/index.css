@@ -1,0 +1,29 @@
+.row-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap:15px;
+}
+
+.team-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+.team-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}

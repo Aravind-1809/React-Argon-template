@@ -1,0 +1,48 @@
+
+.round {
+    margin-right: 20px;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.normal-round {
+    margin-right: 20px;
+    font-size: 6px;
+    margin-left: 5px;
+}
+
+.active-dash-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size:16px;
+    color:black;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+.dash-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size:16px;
+    color:#a0aec0;
+    font-weight: 500;
+    line-height: 35px;
+}
+
+.pages-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+.initial {
+    margin-left: 4px;
+}

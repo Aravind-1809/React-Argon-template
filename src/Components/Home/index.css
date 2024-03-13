@@ -60,3 +60,12 @@
 .increase-width {
     width: 91%;
 }
+
+.page-scroll{
+    background-color:#eb3474;
+    position: fixed;
+    width: 100%;
+    /* margin: 5px; */
+    padding: 2px;
+    z-index: 100;
+}

@@ -1,5 +1,5 @@
 import './index.css'
-import { IoHome } from "react-icons/io5";
+import { IoHome , IoClose} from "react-icons/io5";
 import Option from '../Options';
 import { IoCart } from "react-icons/io5";
 import { FaFile } from "react-icons/fa6";
@@ -8,7 +8,6 @@ import { BiBarChart } from "react-icons/bi";
 import SubPage from '../SubPage';
 import $ from 'jquery';
 import {motion} from "framer-motion"
-import { useState } from 'react';
 import { Pages, SideContainer, SideMainContainer } from '../../StyledComponents';
 
 
@@ -83,9 +82,9 @@ const data1 = [
 
 const SideBar = (props) => {
 
-    const {isClicked, isExpand, setExpand} = props
+    const {isClicked, isExpand, setExpand, isSmall, animate, closeMenu} = props
 
-    const hide = (event) => {
+    const hide = () => {
        $("#board").toggleClass("show-d") 
        $("#arrow1").toggleClass("trans-arrow")
     }
@@ -93,19 +92,17 @@ const SideBar = (props) => {
 
     const handleMouseEnter = (event) => {
         let width = $(event.target).width();
-        console.log(width)
         if (width < 100){
-        $(event.target).attr('id', 'hover')
-        setExpand(prevExpand => !prevExpand)
+            $(event.target).attr('id', 'hover')
+            setExpand(prevExpand => !prevExpand)
         }
     }
 
     const handleMouseLeave = (event) => {
         let id = $(event.target).attr('id');
-        console.log(id)
         if (id === "hover"){
-        setExpand(prevExpand => !prevExpand)
-        $(event.target).removeAttr('id')
+            setExpand(prevExpand => !prevExpand)
+            $(event.target).removeAttr('id')
         }
     }
 
@@ -132,22 +129,33 @@ const SideBar = (props) => {
         }
     }
 
-    const sideVariants = {
-        hidden: {
-            y:"100vh"
+
+    const childVariant = {
+        open: {
+            transition: {
+                staggerChildren: 0.07,
+                delayChildren: 0.2,
+            }
         },
-        visible: {
-            y:0,
+        close: {
             transition:{
-                duration:0.5,
-                type:"tween",
+                staggerChildren: 0.05,
+                staggerDirection: -1
             }
         }
     }
 
+    const closeSide = () => {
+        closeMenu()
+    }
 
     return(
-        <SideMainContainer as={motion.div} isExpand={isExpand} variants={sideVariants} initial="hidden" animate="visible" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <SideMainContainer as={motion.div} isExpand={isExpand} initial={{x:animate?isSmall?"-100vw":0:isSmall?"-100vw":0, y:animate?isSmall?0:0:isSmall?0:"100vh"}} animate={{x:animate ?isSmall? 0:"-100vw":isSmall?"-100vw":0, y:animate?isSmall?0:0:isSmall?0:0,
+            transition:{
+                duration:0.5,
+                type:"tween",
+            }}} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <IoClose className='close-icon' onClick={closeSide} />
         <SideContainer id="side-container" isExpand={isExpand}>
             <div className='brand-container'>
                 {!isExpand &&
@@ -176,18 +184,18 @@ const SideBar = (props) => {
                 </div>
                 {isExpand && <svg id='arrow1' className='arrow' viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path fill="currentColor" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg>}
                 </div>
-            <ul id="board" className='dashboard-list-1'>
+            <motion.ul variants={childVariant} initial={false} animate={isSmall?animate?"open":"close":{}} id="board" className='dashboard-list-1'>
             {data.map(each => {
-                return <Option isExpand={isExpand} key={each.name} item={each}/>
+                return <Option animate={animate} isSmall={isSmall} isExpand={isExpand} key={each.name} item={each}/>
             })}
-            </ul>
+            </motion.ul>
             <Pages isExpand={isExpand}>PAGES</Pages>
-            <ul className='dashboard-list'>
+            <motion.ul variants={childVariant} initial={false} animate={isSmall?animate?"open":"close":{}} className='dashboard-list'>
                 {data1.map(each => {
-                    return <SubPage isExpand={isExpand} key={each.name} item={each} />
+                    return <SubPage isExpand={isExpand} animate={animate} isSmall={isSmall} key={each.name} item={each} />
                 })}
 
-            </ul>
+            </motion.ul>
             {isExpand && 
             <div id="need" className='need-container'>
                 <img src="https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/SidebarHelpImage.b9901216.png" alt="file" className='file-img' />

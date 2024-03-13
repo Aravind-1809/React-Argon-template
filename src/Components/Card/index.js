@@ -1,42 +1,47 @@
 import { SpanEl } from "../../StyledComponents";
-
 import './index.css'
-import {motion} from "framer-motion"
+import { motion } from "framer-motion"
+import AnimatedNumber from "../AnimatedNumber";
 
 const Card = (props) => {
 
-    const {item} = props
-    const {title, rs, profit, loss, time, icon} = item
+    const { item } = props
+    const { title, symbol, rs, profit, loss, time, icon } = item
 
 
     const cardVariants = {
-        hidden:{
-            x:"100vw",
+        hidden: {
+            x: "100vw",
         },
-        visible:{
-            x:0,
-            transition:{
-                type:"spring",
-                ease:"easeInOut",
-                duration:0.8,
-                bounce:0.4
-            }
+        visible: {
+            x: 0,
+            transition: {
+                type: "spring",
+                ease: "easeInOut",
+                duration: 0.8,
+                bounce: 0.4
+            },
         }
     }
 
 
     return (
-        <motion.div className="card-container" variants={cardVariants} initial="hidden" animate="visible" whileHover={{scale:1.1,
-            transition:{
-                type:"spring",
-                duration:0.5,
-                ease:"easeInOut",
-                bounce:0.8
-            }}}>
+        <motion.div className="card-container" variants={cardVariants} initial="hidden" animate="visible" whileHover={{
+            scale: 1.1,
+            transition: {
+                type: "spring",
+                duration: 0.5,
+                ease: "easeInOut",
+                bounce: 0.8
+            }
+        }}>
             <div className="card">
                 <div className="upper-container">
                     <span className="title">{title}</span>
-                    <span className="price">{rs}</span>
+                    <div>
+                        <span className="price">{symbol}</span>
+                        <AnimatedNumber key={title} rs={rs} />
+                    </div>
                 </div>
                 <div className="icon-container">
                     {icon}

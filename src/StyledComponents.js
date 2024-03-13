@@ -60,6 +60,21 @@ padding: 20px;
 width:${(props) => props.isExpand? "16%": "5%"};
 overflow: hidden;
 transition: all 0.2s ease-in-out;
+
+@media (max-width:1200px){
+    // display:none;
+    width:250px;
+    z-index:1;
+}
+
+// @media (max-width:1100px){
+//     width:25%;
+//     z-index:1000;
+// }
+// @media (max-width:950px){
+//     width:30%;
+//     z-index:1000;
+// }
 `;
 
 export const SideContainer = styled.div`
@@ -84,6 +99,12 @@ align-self: flex-end;
 margin-top: 30px;
 box-sizing: border-box;
 transition: all 0.3s ease-in-out;
+
+@media (max-width:1200px){
+    width:100%;
+    flex-wrap:wrap;
+    justify-content:center;
+}
 `;
 
 
@@ -95,6 +116,12 @@ width:${(props) => props.isExpand?"80%":"91%"};
 align-self: flex-end;
 box-sizing: border-box;
 transition: all 0.3s ease-in-out;
+
+@media (max-width:1200px){
+    width:100%;
+    flex-wrap:wrap;
+    justify-content:center;
+}
 `;
 
 
@@ -107,6 +134,12 @@ width:${(props) => props.isExpand?"80%":"91%"};
 align-self: flex-end;
 box-sizing: border-box;
 transition: all 0.3s ease-in-out;
+
+@media (max-width:1200px){
+    width:100%;
+    flex-wrap:wrap;
+    justify-content:center;
+}
 `;
 
 

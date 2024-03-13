@@ -1,5 +1,7 @@
-import { ColorDiv } from "../../StyledComponents"
 import "./index.css"
+import { Reorder} from "framer-motion"
+import { useState } from "react"
+import ProgressItem from "../ProgressItem"
 
 
 const data = [
@@ -12,26 +14,19 @@ const data = [
 
 const Progress = () => {
 
+    const [items, setItems] = useState(data)
+
     return(
         <div className="similar-container">
             <h1 className="team-head">Progress Track</h1>
             <div className="model-container">
-                {
-                    data.map(each => {
-                       return( <>
-                        <div key={each.id} className="progress-container">
-                            <svg viewBox="0 0 20 20" className="team-svg">{each.image}</svg>
-                            <div className="custom-container">
-                                <span className="name">{each.name}</span><br/>
-                                <div className="line-div">
-                                    <ColorDiv color={each.color} percentage={each.percentage }></ColorDiv>
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="line1"></hr>
-                        </>)
-                    })
-                }
+                <Reorder.Group style={{listStyleType:"none", paddingLeft:0, width:"100%"}} axis="y" values={items} onReorder={setItems}>
+                    {
+                        items.map(each => {
+                            return <ProgressItem key={each.id} item={each} />
+                        })
+                    }
+                </Reorder.Group>
             </div>
 
         </div>

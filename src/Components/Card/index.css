@@ -10,6 +10,20 @@
     height: 90px;
 }
 
+@media (max-width:1200px){
+    .card-container{
+        width:43%;
+        margin:10px;
+    }
+}
+
+@media (max-width:900px){
+    .card-container{
+        width:100%;
+        margin:10px;
+    }
+}
+
 .card {
     display: flex;
     flex-direction: row;

@@ -6,7 +6,7 @@ const List = (props) => {
     const {item, toggleCheck} = props 
     const {task, time, check, id} = item
 
-    const checking = (event) => {
+    const checking = () => {
         toggleCheck(id)
     }
 

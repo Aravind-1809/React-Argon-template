@@ -8,9 +8,12 @@ import {
     Area
   } from "recharts"
 
+  // import { useEffect } from "react"
+
   import './index.css'
   import '../Card/index.css'
   import { SpanEl } from "../../StyledComponents"
+  // import ApexCharts from "apexcharts"
 
   const data = [
     {
@@ -51,10 +54,65 @@ import {
     },
   ]
 
+  // var options = {
+  //   series: [{
+  //     name: "Mobile Apps",
+  //     data:[50, 40, 300, 220, 500, 250, 400, 230, 500]
+  //   }],
+  //   chart: {
+  //     type: 'area',
+  //     height:380,
+  //     zoom: {
+  //       enabled: false
+  //     }
+  //   },
+  //   toolbar: {
+  //     show: false,
+  //   },
+  //   dataLabels: {
+  //     enabled: false
+  //   },
+  //   stroke: {
+  //     curve: 'smooth'
+  //   },
+  //   yaxis:{
+  //     min: 0,
+  //     max: 600,
+  //     stepSize: 100,
+  //     labels:{
+  //       style:{
+  //         colors:'#a0aec0'
+  //       }
+  //     }
+  //   },
+  //   xaxis: {
+  //     type: 'category',
+  //     categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+  //     labels:{
+  //       style:{
+  //         colors:"#a0aec0"
+  //       }
+  //     },
+  //     axisTicks:{
+  //       show:false
+  //     },
+  //   },
+  //   grid: {
+  //     strokeDashArray: 5,
+  //   }
+  // }
+
+  
+
 const Sales = () => {
 
+        // useEffect(() => {
+        //   var chart = new ApexCharts(document.querySelector("#area"), options);
+        //   chart.render();
+        // }, [])
+
         return (
-            <div className="sales-container">
+            <div id="area" className="sales-container">
                 <h1 className="price">Sales Overview</h1>
                 <p className="para"><SpanEl loss={false}>(+5%) more</SpanEl>in 2022</p>
             <AreaChart

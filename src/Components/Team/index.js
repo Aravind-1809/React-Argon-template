@@ -6,10 +6,10 @@ import $ from "jquery"
 
 
 const data = [
-{id:1, image:"https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/avatar2.5692c39d.png", name:"Esthera Jackson", status:"Online"},
-{id:2, image:"https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/avatar3.9f646ac5.png", name:"Esthera Jackson", status:"In meeting"},
-{id:3, image:"https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/avatar4.54d5c1de.png", name:"Esthera Jackson", status:"Offline"},
-{id:4, image:"https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/avatar5.d2c5420e.png", name:"Esthera Jackson", status:"Online"},
+{id:1, btnId:"abc", image:"https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/avatar2.5692c39d.png", name:"Esthera Jackson", status:"Online"},
+{id:2, btnId:"efg", image:"https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/avatar3.9f646ac5.png", name:"Peter Parker", status:"In meeting"},
+{id:3, btnId:"hij", image:"https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/avatar4.54d5c1de.png", name:"Jhon Snow", status:"Offline"},
+{id:4, btnId:"klm", image:"https://demos.creative-tim.com/argon-dashboard-chakra-pro/static/media/avatar5.d2c5420e.png", name:"Dannerias", status:"Online"},
 ]
 
 
@@ -18,6 +18,7 @@ const data = [
 const Team = () => {
 
     const [isClicked, setClick] = useState(false);
+    const [selectedId, setSelectedId] = useState(null)
 
     const toAdd = (id) => {
         $(`#${id}`).css('background-color', '#ebf8ff')
@@ -41,7 +42,7 @@ const Team = () => {
             <h1 className="team-head">Team Members</h1>
             <div className="model-container">
                 {data.map(each => {
-                    return <Member key={each.id} item={each} onEnter={onEnter} onLeave={onLeave} toAdd={toAdd} setClick={setClick} />
+                    return <Member key={each.id} item={each} onEnter={onEnter} onLeave={onLeave} toAdd={toAdd} setClick={setClick} selectedId={selectedId} setSelectedId={setSelectedId} />
                 })}
             </div>
 

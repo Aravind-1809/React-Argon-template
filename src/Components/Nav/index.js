@@ -1,15 +1,30 @@
 import { BsList } from "react-icons/bs";
 import { MdOutlineSearch } from "react-icons/md";
 import { IoMdPerson, IoMdSettings } from "react-icons/io";
-import { FaBell } from "react-icons/fa";
+import { FaBell, FaSignInAlt } from "react-icons/fa";
 import "./index.css";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import Tab from "../Tab";
+
+const tabs = [
+  {name:"Profile", id:"Profile", icon:<IoMdPerson />, color:"#5d5dff"},
+  {name:"Sign In", id:"SignIn", icon:<FaSignInAlt />, color:"#67bb67"},
+  {name:"Setings", id:"Setting", icon:<IoMdSettings />, color:"#63a7c7"},
+  {name:"Notifications", id:"Notification", icon:<FaBell />, color:"#f56868"},
+
+]
 
 const Nav = (props) => {
     const { closeMenu } = props;
 
+    const [activeTab, setActiveTab] = useState("Profile");
+
     const close = () => {
         closeMenu();
+    };
+
+    const onTabClick = (id) => {
+        setActiveTab(id);
     };
 
     return (
@@ -19,29 +34,19 @@ const Nav = (props) => {
                     <span className="span-light">
                         <span className="line">Pages</span> /{" "}
                         <span className="line">Default</span>
+                        <BsList className="menu" style={{ strokeWidth: 0.6}} onClick={close} />
                     </span>
                     <span className="span-bold">Default</span>
                 </div>
-                <BsList className="menu" style={{ strokeWidth: 0.6 }} onClick={close} />
-            </div>
-            <div className="second-container">
                 <div className="input-container">
                     <MdOutlineSearch className="search" />
                     <input className="input" type="text" placeholder="Type here..." />
                 </div>
-                <IoMdPerson className="icon" style={{ fill: "#ffffff" }} />
-                <span className="span-bold up">Sign In</span>
-                <motion.div
-                    style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    }}
-                    whileHover={{ rotate: 180, scale: 1.5 }}
-                >
-                    <IoMdSettings className="icon" style={{ fill: "#ffffff" }} />
-                </motion.div>
-                <FaBell className="bell" style={{ fill: "#ffffff" }} />
+            </div>
+            <div className="second-container">
+                  {tabs.map(tab => {
+                    return <Tab tab={tab} activeTab={activeTab} onTabClick={onTabClick} /> 
+                  })}
             </div>
         </div>
     );

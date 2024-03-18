@@ -45,7 +45,7 @@ const Member = (props) => {
                 <StatusBtn status={status}>{status}</StatusBtn>
             </div>
             </div>
-            <AddBtn id={id} onBlur={removeStyles} onMouseEnter={enter} onMouseLeave={leave}  onClick={clickAdd} >ADD</AddBtn>
+            <AddBtn as={motion.button} className="add-btn" whileHover={{backgroundPositionX: '-200%', transition:{duration: 2, repeat: Infinity, ease: 'linear' }}} id={id} onBlur={removeStyles} onMouseEnter={enter} onMouseLeave={leave}  onClick={clickAdd} >ADD</AddBtn>
         </motion.div>
         <AnimatePresence>
         {selectedId && (

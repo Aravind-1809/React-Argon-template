@@ -1,6 +1,7 @@
 import "./index.css"
 import { useState, useEffect } from "react"
 import List from "../List"
+import AnimatedText from "../AnimatedText"
 
 const data = [
     {id:"chech1", task:"Call with Dave", time:"09:30 AM", check:true},
@@ -31,14 +32,13 @@ const Todo = () => {
 
     return(
         <div className="similar-container">
-        <h1 className="team-head">To Do List</h1>
-        <div className="model-container">
-            {todo.map(each => {
-                return <List key={each.id} item={each} toggleCheck={toggleCheck} />
-            })}
+            <h1 className="team-head"><AnimatedText text={"To Do List"} /></h1>
+            <div className="model-container">
+                {todo.map(each => {
+                    return <List key={each.id} item={each} toggleCheck={toggleCheck} />
+                })}
+            </div>
         </div>
-
-    </div>
     )
 }
 

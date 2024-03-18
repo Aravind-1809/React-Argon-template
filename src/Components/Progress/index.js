@@ -2,6 +2,7 @@ import "./index.css"
 import { Reorder} from "framer-motion"
 import { useState } from "react"
 import ProgressItem from "../ProgressItem"
+import AnimatedText from "../AnimatedText"
 
 
 const data = [
@@ -18,7 +19,7 @@ const Progress = () => {
 
     return(
         <div className="similar-container">
-            <h1 className="team-head">Progress Track</h1>
+            <h1 className="team-head"><AnimatedText text={"Progress Track"} /></h1>
             <div className="model-container">
                 <Reorder.Group style={{listStyleType:"none", paddingLeft:0, width:"100%"}} axis="y" values={items} onReorder={setItems}>
                     {

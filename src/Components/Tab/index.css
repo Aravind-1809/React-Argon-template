@@ -1,0 +1,30 @@
+.active-tab {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* width:55%; */
+    border-radius: 25px;
+    height:40px;
+    background-color: #ffffff;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.active-icon {
+    margin-left: 5px;
+}
+
+.tab-name{
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.off {
+    display: none;
+}
+
+.tab-icon {
+    color:#ffffff;
+    font-size: 18px;
+}

@@ -2,6 +2,7 @@ import Member from "../Member";
 import "./index.css"
 import { useState } from "react"
 import $ from "jquery"
+import AnimatedText from "../AnimatedText";
 
 
 
@@ -39,7 +40,7 @@ const Team = () => {
 
     return(
         <div className="similar-container">
-            <h1 className="team-head">Team Members</h1>
+            <h1 className="team-head"><AnimatedText text={"Team Members"} /></h1>
             <div className="model-container">
                 {data.map(each => {
                     return <Member key={each.id} item={each} onEnter={onEnter} onLeave={onLeave} toAdd={toAdd} setClick={setClick} selectedId={selectedId} setSelectedId={setSelectedId} />

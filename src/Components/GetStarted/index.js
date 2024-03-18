@@ -1,5 +1,6 @@
 import { IoBulb } from "react-icons/io5";
 import './index.css'
+import AnimatedText from "../AnimatedText";
 
 
 const GetStarted = () => {
@@ -10,8 +11,8 @@ const GetStarted = () => {
                 <div className="bulb-container">
                     <IoBulb className="bulb"/>
                 </div>
-                <h1 className="head">Get Started With Argon</h1>
-                <span className="paragraph">Start your development process with an innovative admin dashboard!</span>
+                <h1 className="head"><AnimatedText text={"Get Started With Argon"} /></h1>
+                <span className="paragraph"><AnimatedText text={"Start your development process with an innovative admin dashboard!"} /></span>
             </div>
         </div>
     )

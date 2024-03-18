@@ -151,3 +151,11 @@ font-size: ${(props) => props.isExpand?"18px":"12px"};
 margin-top: 10px;
 `;
 
+
+export const IconContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+box-sizing: border-box;
+`;

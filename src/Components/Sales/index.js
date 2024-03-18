@@ -13,6 +13,7 @@ import {
   import './index.css'
   import '../Card/index.css'
   import { SpanEl } from "../../StyledComponents"
+  import AnimatedText from "../AnimatedText"
   // import ApexCharts from "apexcharts"
 
   const data = [
@@ -113,7 +114,7 @@ const Sales = () => {
 
         return (
             <div id="area" className="sales-container">
-                <h1 className="price">Sales Overview</h1>
+                <h1 className="price"><AnimatedText text={"Sales Overview"} /></h1>
                 <p className="para"><SpanEl loss={false}>(+5%) more</SpanEl>in 2022</p>
             <AreaChart
               width={750}
